@@ -1,9 +1,14 @@
-function App() {
+import { FormContextProvider } from "./components/Context/FormContext.jsx";
+import { Form } from "./components/Form/Form.jsx";
+
+export default function App() {
   return (
     <>
-      <h1>Hello App</h1>
+      <FormContextProvider>
+        <main>
+          <Form />
+        </main>
+      </FormContextProvider>
     </>
   );
 }
-
-export default App;
