@@ -7,7 +7,7 @@ export function FormContextProvider({ children }) {
   const [years, setYears] = useState();
   const [rate, setRate] = useState();
   const [submitted, setSubmitted] = useState(false);
-  const [selectedOption, setSelectedOption] = useState("monthlyPayment");
+  const [selectedOption, setSelectedOption] = useState("");
 
   const handlePrincipalChange = (event) => {
     setPrincipal(event.target.value);
@@ -118,14 +118,11 @@ export function FormContextProvider({ children }) {
 
   const handleClearAllValues = (event) => {
     event.preventDefault();
-    const radioBtn = document.querySelectorAll(`input[type="radio"]`);
-    for (const radio of radioBtn) {
-      radio.checked = false;
-    }
     setPrincipal("");
     setYears("");
     setRate("");
     setSubmitted(false);
+    setSelectedOption("");
   };
 
   return (
