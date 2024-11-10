@@ -2,7 +2,12 @@ import { useContext } from "react";
 import { FormContext } from "../Context/FormContext.jsx";
 
 export function Results() {
-  const { monthlyPaymentAmount, totalCost } = useContext(FormContext);
+  const {
+    selectedOption,
+    originalTotalInterestPayment,
+    monthlyPaymentAmount,
+    totalCost,
+  } = useContext(FormContext);
 
   return (
     <>
@@ -17,8 +22,16 @@ export function Results() {
         </div>
         <div>
           <div>
-            <p>Your monthly payments</p>
-            <p>{monthlyPaymentAmount}</p>
+            <p>
+              {selectedOption === "monthlyPayment"
+                ? "Your monthly payments"
+                : "Your total interest payments"}
+            </p>
+            <p>
+              {selectedOption === "monthlyPayment"
+                ? monthlyPaymentAmount
+                : originalTotalInterestPayment}
+            </p>
           </div>
           <hr />
           <div>

@@ -7,6 +7,7 @@ export function FormContextProvider({ children }) {
   const [years, setYears] = useState();
   const [rate, setRate] = useState();
   const [submitted, setSubmitted] = useState(false);
+  const [selectedOption, setSelectedOption] = useState("monthlyPayment");
 
   const handlePrincipalChange = (event) => {
     setPrincipal(event.target.value);
@@ -16,6 +17,9 @@ export function FormContextProvider({ children }) {
   };
   const handleRateChange = (event) => {
     setRate(event.target.value);
+  };
+  const handleRadioChange = (event) => {
+    setSelectedOption(event.target.value);
   };
 
   const interestRate = (rate) => {
@@ -73,11 +77,25 @@ export function FormContextProvider({ children }) {
     style: "currency",
     currency: "USD",
   });
-
+  const originalTotalInterestPayment = originalTotalInterest(
+    principal,
+    years,
+    rate
+  ).toLocaleString("en-US", {
+    style: "currency",
+    currency: "USD",
+  });
   const totalCost = totalPayment(principal, years, rate);
 
-  const handlePaymentOnSubmit = (event) => {
-    event.preventDefault();
+  const checkRadioSelection = () => {
+    if (selectedOption === "monthlyPayment") {
+      monthlyPaymentAmount;
+    } else if (selectedOption === "interestOnly") {
+      originalTotalInterestPayment;
+    }
+  };
+
+  const validateInputs = () => {
     if (
       principal <= 0 ||
       rate <= 0 ||
@@ -92,9 +110,23 @@ export function FormContextProvider({ children }) {
     }
   };
 
-  // TODO - create function to handle error
-  // TODO - create function to clear all values
-  // TODO - how to checked radio buttons
+  const handlePaymentOnSubmit = (event) => {
+    event.preventDefault();
+    validateInputs();
+    checkRadioSelection();
+  };
+
+  const handleClearAllValues = (event) => {
+    event.preventDefault();
+    const radioBtn = document.querySelectorAll(`input[type="radio"]`);
+    for (const radio of radioBtn) {
+      radio.checked = false;
+    }
+    setPrincipal("");
+    setYears("");
+    setRate("");
+    setSubmitted(false);
+  };
 
   return (
     <>
@@ -106,8 +138,12 @@ export function FormContextProvider({ children }) {
           handlePrincipalChange,
           handleYearsChange,
           handleRateChange,
+          handleRadioChange,
           handlePaymentOnSubmit,
+          handleClearAllValues,
           submitted,
+          selectedOption,
+          originalTotalInterestPayment,
           monthlyPaymentAmount,
           totalCost,
         }}

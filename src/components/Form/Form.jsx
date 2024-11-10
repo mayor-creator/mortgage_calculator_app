@@ -12,8 +12,11 @@ export function Form() {
     handlePrincipalChange,
     handleYearsChange,
     handleRateChange,
+    handleRadioChange,
     handlePaymentOnSubmit,
+    handleClearAllValues,
     submitted,
+    selectedOption,
   } = useContext(FormContext);
 
   return (
@@ -22,7 +25,7 @@ export function Form() {
         <form>
           <div>
             <h1>Mortgage Calculator</h1>
-            <button>Clear All</button>
+            <button onClick={handleClearAllValues}>Clear All</button>
           </div>
           <div>
             <label htmlFor="mortgage_amount">Mortgage Amount </label>
@@ -57,11 +60,25 @@ export function Form() {
           <fieldset>
             <legend>Mortgage Type</legend>
             <div>
-              <input id="repayment" name="repayment" type="radio" />
+              <input
+                id="repayment"
+                value="monthlyPayment"
+                checked={selectedOption === "monthlyPayment"}
+                onChange={handleRadioChange}
+                name="repayment"
+                type="radio"
+              />
               <label htmlFor="Repayment">Repayment</label>
             </div>
             <div>
-              <input id="repayment" name="repayment" type="radio" />
+              <input
+                id="repayment"
+                value="interestOnly"
+                checked={selectedOption === "interestOnly"}
+                onChange={handleRadioChange}
+                name="repayment"
+                type="radio"
+              />
               <label htmlFor="repayment">Interest Only</label>
             </div>
           </fieldset>
