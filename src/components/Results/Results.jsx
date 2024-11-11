@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { FormContext } from "../Context/FormContext.jsx";
+import styles from "../Results/Results.module.css";
 
 export function Results() {
   const {
@@ -11,23 +12,23 @@ export function Results() {
 
   return (
     <>
-      <section>
+      <section className={styles.resultsContainer}>
         <div>
-          <h2>Your results</h2>
-          <p>
+          <h2 className={styles.resultsTitle}>Your results</h2>
+          <p className={styles.resultsMessage}>
             Your results are shown below based on the information you provided.
             To adjust the results, edit the form and click &quot;calculate
             repayments&quot; again.
           </p>
         </div>
-        <div>
+        <div className={styles.resultsAmountContainer}>
           <div>
-            <p>
+            <p className={styles.monthlyMessage}>
               {selectedOption === "monthlyPayment"
                 ? "Your monthly payments"
                 : "Your total interest payments"}
             </p>
-            <p>
+            <p className={styles.monthlyAmount}>
               {selectedOption === "monthlyPayment"
                 ? monthlyPaymentAmount
                 : originalTotalInterestPayment}
@@ -35,8 +36,10 @@ export function Results() {
           </div>
           <hr />
           <div>
-            <p>Total you&#39;ll repay over the term</p>
-            <p>{totalCost}</p>
+            <p className={styles.totalAmountMessage}>
+              Total you&#39;ll repay over the term
+            </p>
+            <p className={styles.totalAmount}>{totalCost}</p>
           </div>
         </div>
       </section>

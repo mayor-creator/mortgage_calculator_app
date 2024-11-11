@@ -1,9 +1,10 @@
 import emptyIllustration from "../../assets/images/illustration-empty.svg";
+import styles from "./DefaultResults.module.css";
 
 export function DefaultResults() {
   return (
     <>
-      <section>
+      <section className={styles.resultsContainer}>
         <div>
           <img
             src={emptyIllustration}
@@ -13,10 +14,10 @@ export function DefaultResults() {
           />
         </div>
         <div>
-          <h2>Result shown here</h2>
+          <h2 className={styles.resultTitle}>Results shown here</h2>
         </div>
         <div>
-          <p>
+          <p className={styles.resultMessage}>
             Complete the form and click &quot;calculate payments&quot; to see
             what your monthly repayments would be.
           </p>
