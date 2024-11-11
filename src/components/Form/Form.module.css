@@ -1,0 +1,93 @@
+:root {
+  --lime: hsl(61, 70%, 52%);
+  --slate900: hsl(202, 55%, 16%);
+  --slate700: hsl(200, 24%, 40%);
+  --slate500: hsl(200, 26%, 54%);
+  --slate300: hsl(203, 41%, 72%);
+  --slate100: hsl(202, 86%, 94%);
+  --white: hsl(0, 0%, 100%);
+  --red: hsl(4, 69%, 50%);
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../assets/fonts/plus-jakarta-sans-v8-latin-regular.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../../assets/fonts/plus-jakarta-sans-v8-latin-500.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../../assets/fonts/plus-jakarta-sans-v8-latin-700.woff2")
+    format("woff2");
+}
+
+.mainWrapper {
+  width: min(100% - 2rem, 63rem);
+  margin-inline: auto;
+}
+
+.titleBarContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.5rem 0rem;
+}
+
+.title {
+  color: var(--slate900);
+  font-size: clamp(1.5rem, 0.795774647887324rem + 3.004694835680751vw, 3.5rem);
+}
+
+.linkButton {
+  background-color: var(--white);
+  border: none;
+  color: var(--slate700);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.fieldsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.fieldsContainer > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.label {
+  color: var(--slate700);
+  display: block;
+}
+
+.numberInputContainer {
+  border: 1px solid var(--slate700);
+}
+
+.principalAmount {
+  background-color: var(--slate100);
+  display: inline-block;
+}
+
+.numberInput {
+  outline: none;
+  border: 1px solid var(--red);
+}

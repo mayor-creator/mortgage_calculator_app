@@ -1,0 +1,85 @@
+@font-face {
+  font-display: swap;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../assets/fonts/plus-jakarta-sans-v8-latin-regular.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../../assets/fonts/plus-jakarta-sans-v8-latin-500.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../../assets/fonts/plus-jakarta-sans-v8-latin-700.woff2")
+    format("woff2");
+}
+
+.resultsContainer {
+  background-color: var(--slate900);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.resultsTitle {
+  color: var(--white);
+  font-family: "Plus Jakarta Sans";
+  font-weight: 700;
+  font-size: clamp(1.5rem, 0.795774647887324rem + 3.004694835680751vw, 3.5rem);
+  padding-bottom: 1rem;
+}
+
+.resultsMessage {
+  color: var(--slate300);
+  font-family: "Plus Jakarta Sans";
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.resultsAmountContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 1rem;
+  font-family: "Plus Jakarta Sans";
+  border-radius: 8px;
+  background: hsl(202, 55%, 10%);
+  padding: 10px;
+}
+
+.monthlyMessage {
+  color: var(--slate300);
+}
+
+.monthlyAmount {
+  color: var(--lime);
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.totalAmountMessage {
+  color: var(--slate300);
+  font-size: 1rem;
+  font-weight: 500;
+  padding-bottom: 0.625rem;
+}
+
+.totalAmount {
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding-bottom: 0.625rem;
+}
