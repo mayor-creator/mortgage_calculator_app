@@ -55,8 +55,10 @@
   justify-content: space-evenly;
   gap: 1rem;
   font-family: "Plus Jakarta Sans";
-  border-radius: 8px;
-  background: hsl(202, 55%, 10%);
+  background-color: hsl(202, 55%, 10%);
+  border-top: 0.25rem solid var(--lime);
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
   padding: 10px;
 }
 

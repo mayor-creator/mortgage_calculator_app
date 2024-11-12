@@ -39,7 +39,9 @@ export function Form() {
                 Mortgage Amount{" "}
               </label>
               <div className={styles.numberInputContainer}>
-                <div className={styles.principalAmount}>$</div>
+                <div className={styles.principalAmountContainer}>
+                  <p className={styles.prefix}>$</p>
+                </div>
                 <input
                   className={styles.numberInput}
                   id="mortgage_amount"
@@ -54,26 +56,36 @@ export function Form() {
                 <label className={styles.label} htmlFor="mortgage_term">
                   Mortgage Term{" "}
                 </label>
-                <input
-                  className={styles.numberInput}
-                  id="mortgage_term"
-                  type="number"
-                  value={years}
-                  onChange={handleYearsChange}
-                />
+                <div className={styles.numberInputContainer}>
+                  <input
+                    className={styles.yearsInput}
+                    id="mortgage_term"
+                    type="number"
+                    value={years}
+                    onChange={handleYearsChange}
+                  />
+                  <div className={styles.yearsContainer}>
+                    <p className={styles.prefix}>Years</p>
+                  </div>
+                </div>
               </div>
               <div>
                 <label className={styles.label} htmlFor="interest_rate">
                   Interest Rate{" "}
                 </label>
-                <input
-                  className={styles.numberInput}
-                  id="interest_rate"
-                  type="number"
-                  step="0.01"
-                  value={rate}
-                  onChange={handleRateChange}
-                />
+                <div className={styles.numberInputContainer}>
+                  <input
+                    className={styles.percentInput}
+                    id="interest_rate"
+                    type="number"
+                    step="0.01"
+                    value={rate}
+                    onChange={handleRateChange}
+                  />
+                  <div className={styles.percentContainer}>
+                    <p className={styles.prefix}>%</p>
+                  </div>
+                </div>
               </div>
             </div>
             <fieldset>
@@ -101,17 +113,22 @@ export function Form() {
                 <label htmlFor="repayment">Interest Only</label>
               </div>
             </fieldset>
-            <div>
-              <button type="submit" onClick={handlePaymentOnSubmit}>
-                <img
-                  src={calculatorIcon}
-                  alt="calculator icon"
-                  width="24"
-                  height="24"
-                />
-                Calculate Repayments
-              </button>
-            </div>
+          </div>
+          <div>
+            <button
+              className={styles.btn}
+              type="submit"
+              onClick={handlePaymentOnSubmit}
+            >
+              <img
+                className={styles.btnImage}
+                src={calculatorIcon}
+                alt="calculator icon"
+                width="24"
+                height="24"
+              />
+              <p>Calculate Repayments</p>
+            </button>
           </div>
         </form>
       </section>
