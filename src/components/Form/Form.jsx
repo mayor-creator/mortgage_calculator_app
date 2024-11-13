@@ -24,111 +24,113 @@ export function Form() {
     <>
       <section className={styles.mainWrapper}>
         <form>
-          <div className={styles.titleBarContainer}>
-            <h1 className={styles.title}>Mortgage Calculator</h1>
-            <button
-              className={styles.linkButton}
-              onClick={handleClearAllValues}
-            >
-              Clear All
-            </button>
-          </div>
-          <div className={styles.fieldsContainer}>
+          <div className={styles.formItemsWrapper}>
             <div>
-              <label className={styles.label} htmlFor="mortgage_amount">
-                Mortgage Amount{" "}
-              </label>
-              <div className={styles.numberInputContainer}>
-                <div className={styles.principalAmountContainer}>
-                  <p className={styles.prefix}>$</p>
-                </div>
-                <input
-                  className={styles.numberInput}
-                  id="mortgage_amount"
-                  type="number"
-                  value={principal}
-                  onChange={handlePrincipalChange}
-                />
-              </div>
+              <h1 className={styles.title}>Mortgage Calculator</h1>
+              <button
+                className={styles.linkButton}
+                onClick={handleClearAllValues}
+              >
+                Clear All
+              </button>
             </div>
-            <div>
+            <div className={styles.fieldsContainer}>
               <div>
-                <label className={styles.label} htmlFor="mortgage_term">
-                  Mortgage Term{" "}
+                <label className={styles.label} htmlFor="mortgage_amount">
+                  Mortgage Amount{" "}
                 </label>
                 <div className={styles.numberInputContainer}>
+                  <div className={styles.principalAmountContainer}>
+                    <p className={styles.prefix}>$</p>
+                  </div>
                   <input
-                    className={styles.yearsInput}
-                    id="mortgage_term"
+                    className={styles.numberInput}
+                    id="mortgage_amount"
                     type="number"
-                    value={years}
-                    onChange={handleYearsChange}
+                    value={principal}
+                    onChange={handlePrincipalChange}
                   />
-                  <div className={styles.yearsContainer}>
-                    <p className={styles.prefix}>Years</p>
+                </div>
+              </div>
+              <div className={styles.fieldsChildContainer}>
+                <div>
+                  <label className={styles.label} htmlFor="mortgage_term">
+                    Mortgage Term{" "}
+                  </label>
+                  <div className={styles.numberInputContainer}>
+                    <input
+                      className={styles.yearsInput}
+                      id="mortgage_term"
+                      type="number"
+                      value={years}
+                      onChange={handleYearsChange}
+                    />
+                    <div className={styles.yearsContainer}>
+                      <p className={styles.prefix}>Years</p>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <label className={styles.label} htmlFor="interest_rate">
+                    Interest Rate{" "}
+                  </label>
+                  <div className={styles.numberInputContainer}>
+                    <input
+                      className={styles.percentInput}
+                      id="interest_rate"
+                      type="number"
+                      step="0.01"
+                      value={rate}
+                      onChange={handleRateChange}
+                    />
+                    <div className={styles.percentContainer}>
+                      <p className={styles.prefix}>%</p>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div>
-                <label className={styles.label} htmlFor="interest_rate">
-                  Interest Rate{" "}
-                </label>
-                <div className={styles.numberInputContainer}>
+              <fieldset>
+                <legend>Mortgage Type</legend>
+                <div>
                   <input
-                    className={styles.percentInput}
-                    id="interest_rate"
-                    type="number"
-                    step="0.01"
-                    value={rate}
-                    onChange={handleRateChange}
+                    id="repayment"
+                    value="monthlyPayment"
+                    checked={selectedOption === "monthlyPayment"}
+                    onChange={handleRadioChange}
+                    name="repayment"
+                    type="radio"
                   />
-                  <div className={styles.percentContainer}>
-                    <p className={styles.prefix}>%</p>
-                  </div>
+                  <label htmlFor="Repayment">Repayment</label>
                 </div>
-              </div>
+                <div>
+                  <input
+                    id="repayment"
+                    value="interestOnly"
+                    checked={selectedOption === "interestOnly"}
+                    onChange={handleRadioChange}
+                    name="repayment"
+                    type="radio"
+                  />
+                  <label htmlFor="repayment">Interest Only</label>
+                </div>
+              </fieldset>
             </div>
-            <fieldset>
-              <legend>Mortgage Type</legend>
-              <div>
-                <input
-                  id="repayment"
-                  value="monthlyPayment"
-                  checked={selectedOption === "monthlyPayment"}
-                  onChange={handleRadioChange}
-                  name="repayment"
-                  type="radio"
+            <div>
+              <button
+                className={styles.btn}
+                type="submit"
+                onClick={handlePaymentOnSubmit}
+              >
+                <img
+                  className={styles.btnImage}
+                  src={calculatorIcon}
+                  alt="calculator icon"
+                  width="24"
+                  height="24"
                 />
-                <label htmlFor="Repayment">Repayment</label>
-              </div>
-              <div>
-                <input
-                  id="repayment"
-                  value="interestOnly"
-                  checked={selectedOption === "interestOnly"}
-                  onChange={handleRadioChange}
-                  name="repayment"
-                  type="radio"
-                />
-                <label htmlFor="repayment">Interest Only</label>
-              </div>
-            </fieldset>
-          </div>
-          <div>
-            <button
-              className={styles.btn}
-              type="submit"
-              onClick={handlePaymentOnSubmit}
-            >
-              <img
-                className={styles.btnImage}
-                src={calculatorIcon}
-                alt="calculator icon"
-                width="24"
-                height="24"
-              />
-              <p>Calculate Repayments</p>
-            </button>
+                <p>Calculate Repayments</p>
+              </button>
+            </div>
           </div>
         </form>
       </section>
