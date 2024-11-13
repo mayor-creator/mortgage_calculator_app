@@ -89,29 +89,35 @@ export function Form() {
                   </div>
                 </div>
               </div>
-              <fieldset>
-                <legend>Mortgage Type</legend>
-                <div>
-                  <input
-                    id="repayment"
-                    value="monthlyPayment"
-                    checked={selectedOption === "monthlyPayment"}
-                    onChange={handleRadioChange}
-                    name="repayment"
-                    type="radio"
-                  />
-                  <label htmlFor="Repayment">Repayment</label>
+              <fieldset className={styles.fieldSet}>
+                <legend className={styles.legend}>Mortgage Type</legend>
+                <div className={styles.radioRepaymentContainer}>
+                  <label htmlFor="repayment">
+                    <input
+                      className={styles.radioInput}
+                      id="repayment"
+                      value="monthlyPayment"
+                      checked={selectedOption === "monthlyPayment"}
+                      onChange={handleRadioChange}
+                      name="repayment"
+                      type="radio"
+                    />
+                    Repayment
+                  </label>
                 </div>
-                <div>
-                  <input
-                    id="repayment"
-                    value="interestOnly"
-                    checked={selectedOption === "interestOnly"}
-                    onChange={handleRadioChange}
-                    name="repayment"
-                    type="radio"
-                  />
-                  <label htmlFor="repayment">Interest Only</label>
+                <div className={styles.radioInterestOnlyContainer}>
+                  <label htmlFor="repayment">
+                    <input
+                      className={styles.radioInput}
+                      id="repayment"
+                      value="interestOnly"
+                      checked={selectedOption === "interestOnly"}
+                      onChange={handleRadioChange}
+                      name="repayment"
+                      type="radio"
+                    />
+                    Interest Only
+                  </label>
                 </div>
               </fieldset>
             </div>
