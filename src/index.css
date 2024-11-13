@@ -4,6 +4,17 @@
   box-sizing: border-box;
 }
 
+:root {
+  --lime: hsl(61, 70%, 52%);
+  --slate900: hsl(202, 55%, 16%);
+  --slate700: hsl(200, 24%, 40%);
+  --slate500: hsl(200, 26%, 54%);
+  --slate300: hsl(203, 41%, 72%);
+  --slate100: hsl(202, 86%, 94%);
+  --white: hsl(0, 0%, 100%);
+  --red: hsl(4, 69%, 50%);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +23,7 @@
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  background-color: hsl(0, 0%, 98%);
+  background-color: var(--white);
   font-optical-sizing: auto;
   font-style: normal;
 }
@@ -73,4 +84,10 @@ input::-webkit-inner-spin-button {
 
 input[type="number"] {
   -moz-appearance: textfield;
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
 }
