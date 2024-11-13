@@ -83,7 +83,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 2rem;
+  height: 3rem;
   width: 2.75rem;
   text-align: center;
 }
@@ -95,8 +95,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 2rem;
-  width: 80px;
+  height: 3rem;
+  width: 5rem;
   text-align: center;
 }
 
@@ -107,8 +107,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 2rem;
-  width: 51px;
+  height: 3rem;
+  width: 3.188rem;
   text-align: center;
 }
 
@@ -126,11 +126,11 @@
   border-bottom-right-radius: 0.25rem;
   cursor: pointer;
   font-family: "Plus Jakarta Sans";
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 700;
   outline: none;
   width: 100%;
-  padding-left: 18px;
+  padding-left: 1.125rem;
 }
 
 .yearsInput {
@@ -140,11 +140,11 @@
   border-bottom-left-radius: 0.25rem;
   cursor: pointer;
   font-family: "Plus Jakarta Sans";
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 700;
   outline: none;
   width: 100%;
-  padding-left: 18px;
+  padding-left: 1.125rem;
 }
 
 .percentInput {
@@ -154,11 +154,11 @@
   border-bottom-left-radius: 0.25rem;
   cursor: pointer;
   font-family: "Plus Jakarta Sans";
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 700;
   outline: none;
   width: 100%;
-  padding-left: 18px;
+  padding-left: 1.125rem;
 }
 
 .btn {
