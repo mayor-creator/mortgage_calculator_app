@@ -3,9 +3,9 @@ import { createContext, useState } from "react";
 export const FormContext = createContext();
 
 export function FormContextProvider({ children }) {
-  const [principal, setPrincipal] = useState();
-  const [years, setYears] = useState();
-  const [rate, setRate] = useState();
+  const [principal, setPrincipal] = useState("");
+  const [years, setYears] = useState("");
+  const [rate, setRate] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [selectedOption, setSelectedOption] = useState("");
 
