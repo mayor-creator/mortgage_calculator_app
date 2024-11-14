@@ -91,10 +91,13 @@ export function Form() {
               </div>
               <fieldset className={styles.fieldSet}>
                 <legend className={styles.legend}>Mortgage Type</legend>
-                <div className={styles.radioRepaymentContainer}>
-                  <label htmlFor="repayment">
+                <div className={styles.radioContainer}>
+                  <label
+                    className={styles.radioButtonLabel}
+                    htmlFor="repayment"
+                  >
                     <input
-                      className={styles.radioInput}
+                      className={styles.radioButtonInput}
                       id="repayment"
                       value="monthlyPayment"
                       checked={selectedOption === "monthlyPayment"}
@@ -105,11 +108,14 @@ export function Form() {
                     Repayment
                   </label>
                 </div>
-                <div className={styles.radioInterestOnlyContainer}>
-                  <label htmlFor="repayment">
+                <div className={styles.radioContainer}>
+                  <label
+                    className={styles.radioButtonLabel}
+                    htmlFor="interestOnly"
+                  >
                     <input
                       className={styles.radioInput}
-                      id="repayment"
+                      id="interestOnly"
                       value="interestOnly"
                       checked={selectedOption === "interestOnly"}
                       onChange={handleRadioChange}
@@ -121,7 +127,7 @@ export function Form() {
                 </div>
               </fieldset>
             </div>
-            <div>
+            <div className={styles.btnContainer}>
               <button
                 className={styles.btn}
                 type="submit"
