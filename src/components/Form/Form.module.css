@@ -33,6 +33,10 @@
   @media (min-width: 48em) and (max-width: 63.938em) {
     padding: 1.5rem;
   }
+
+  @media (min-width: 64em) {
+    padding: 2rem;
+  }
 }
 
 .formItemsWrapper {
@@ -41,11 +45,26 @@
   gap: 1.5rem;
 }
 
+.titleContainer {
+  @media (min-width: 48em) and (max-width: 63.938em) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (min-width: 64em) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
 .title {
   color: var(--slate900);
   font-family: "Plus Jakarta Sans";
   font-size: clamp(1.5rem, 0.795774647887324rem + 3.004694835680751vw, 3.5rem);
   font-weight: 700;
+  @media (min-width: 64em) {
+    font-size: 1.5rem;
+  }
 }
 
 .linkButton {
@@ -72,11 +91,8 @@
   @media (min-width: 48em) and (max-width: 63.938em) {
     flex-direction: row;
   }
-}
-
-.fieldsChildSecondItem {
-  @media (min-width: 48em) and (max-width: 63.938em) {
-    flex: 1;
+  @media (min-width: 64em) {
+    flex-direction: row;
   }
 }
 

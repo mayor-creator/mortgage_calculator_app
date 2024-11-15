@@ -22,10 +22,10 @@ export function Form() {
 
   return (
     <>
-      <section className={styles.mainWrapper}>
+      <div className={styles.mainWrapper}>
         <form>
           <div className={styles.formItemsWrapper}>
-            <div>
+            <div className={styles.titleContainer}>
               <h1 className={styles.title}>Mortgage Calculator</h1>
               <button
                 className={styles.linkButton}
@@ -70,7 +70,7 @@ export function Form() {
                     </div>
                   </div>
                 </div>
-                <div className={styles.fieldsChildSecondItem}>
+                <div>
                   <label className={styles.label} htmlFor="interest_rate">
                     Interest Rate{" "}
                   </label>
@@ -145,7 +145,7 @@ export function Form() {
             </div>
           </div>
         </form>
-      </section>
+      </div>
 
       {!submitted && <DefaultResults />}
       {submitted && <Results />}

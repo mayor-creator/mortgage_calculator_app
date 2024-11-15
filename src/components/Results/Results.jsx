@@ -12,7 +12,7 @@ export function Results() {
 
   return (
     <>
-      <section className={styles.resultsContainer}>
+      <div className={styles.resultsContainer}>
         <div>
           <h2 className={styles.resultsTitle}>Your results</h2>
           <p className={styles.resultsMessage}>
@@ -42,7 +42,7 @@ export function Results() {
             <p className={styles.totalAmount}>{totalCost}</p>
           </div>
         </div>
-      </section>
+      </div>
     </>
   );
 }
