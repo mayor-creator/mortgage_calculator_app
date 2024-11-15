@@ -28,7 +28,15 @@ body {
   font-style: normal;
   @media (min-width: 48em) and (max-width: 63.938em) {
     background-color: var(--slate100);
-    padding: 1.5rem;
+    padding: 2.5rem;
+  }
+
+  @media (min-width: 64em) {
+    background-color: var(--slate100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
   }
 }
 
@@ -57,7 +65,6 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
-  text-wrap: balance;
 }
 
 p,
@@ -65,14 +72,6 @@ li,
 figcaption {
   text-wrap: pretty;
   max-width: 65ch;
-}
-
-header,
-footer,
-main,
-section,
-article {
-  container-type: inline-size;
 }
 
 #root,
