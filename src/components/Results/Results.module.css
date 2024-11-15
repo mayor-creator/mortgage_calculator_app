@@ -5,6 +5,11 @@
   flex-grow: 1;
   gap: 1rem;
   padding: 1.5rem;
+  @media (min-width: 48em) and (max-width: 63.938em) {
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    justify-content: center;
+  }
 }
 
 .resultsTitle {
@@ -32,7 +37,7 @@
   border-top: 0.25rem solid var(--lime);
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
-  padding: 10px;
+  padding: 0.625rem;
 }
 
 .monthlyMessage {

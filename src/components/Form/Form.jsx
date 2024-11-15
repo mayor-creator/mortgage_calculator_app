@@ -70,7 +70,7 @@ export function Form() {
                     </div>
                   </div>
                 </div>
-                <div>
+                <div className={styles.fieldsChildSecondItem}>
                   <label className={styles.label} htmlFor="interest_rate">
                     Interest Rate{" "}
                   </label>
