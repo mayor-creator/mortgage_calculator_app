@@ -7,4 +7,13 @@
     background-color: var(--white);
     border-radius: 1.5rem;
   }
+
+  @media (min-width: 64em) {
+    background-color: var(--white);
+    flex-direction: row;
+    width: min(100% - 2rem, 1008px);
+    margin-inline: auto;
+    border-radius: 1.5rem;
+    height: auto;
+  }
 }
